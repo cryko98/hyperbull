@@ -546,6 +546,27 @@ main, .nav, .footer{ position:relative; z-index:4; }
   background:linear-gradient(180deg, rgba(34,233,255,.07), transparent 60%);
 }
 .pullquote em{ color:var(--cyan); font-style:normal; text-shadow:var(--glow-md); }
+/* full-width cinematic plate */
+.showcase{
+  position:relative; margin:clamp(2.5rem,7vw,4.5rem) auto 0;
+  max-width:880px; text-align:center;
+}
+.showcase::before{
+  content:""; position:absolute; inset:-6% -4%; z-index:-1; border-radius:24px;
+  background:radial-gradient(circle at 50% 45%, rgba(34,233,255,.26), transparent 68%);
+  filter:blur(18px);
+}
+.showcase img{
+  width:auto; max-width:100%; max-height:86vh; height:auto; object-fit:contain;
+  margin-inline:auto; border-radius:12px; border:1px solid var(--line-2);
+  box-shadow:0 40px 90px rgba(0,0,0,.75), 0 0 80px rgba(34,233,255,.16);
+}
+.showcase figcaption{
+  margin-top:1.2rem; font-family:var(--display);
+  font-size:clamp(1.4rem,3.6vw,2.5rem); letter-spacing:.08em; color:#dff6fb;
+}
+.showcase figcaption span{ color:var(--cyan); text-shadow:var(--glow-md); }
+
 .pullquote__mark{
   display:block; width:30px; height:30px; margin:0 auto .8rem; color:var(--cyan);
   filter:drop-shadow(0 0 10px rgba(34,233,255,.9));
@@ -698,11 +719,15 @@ main, .nav, .footer{ position:relative; z-index:4; }
 .tok__k{ display:block; font-family:var(--mono); font-size:.64rem; letter-spacing:.22em; color:var(--muted); margin-bottom:.6rem; }
 .tok__v{ display:block; font-family:var(--display); font-size:clamp(1.4rem,3vw,2rem); letter-spacing:.05em; color:var(--cyan-hot); text-shadow:var(--glow-sm); }
 
-.tok__art{ margin:clamp(2.5rem,6vw,4rem) auto 0; max-width:640px; }
+.tok__art{ margin:clamp(2.5rem,6vw,4rem) auto 0; max-width:640px; text-align:center; }
 .tok__art img{
-  width:100%; height:auto; object-fit:contain; border-radius:12px;
-  border:1px solid var(--line-2);
+  width:auto; max-width:100%; max-height:86vh; height:auto; object-fit:contain;
+  margin-inline:auto; border-radius:12px; border:1px solid var(--line-2);
   box-shadow:0 30px 80px rgba(0,0,0,.7), 0 0 70px rgba(34,233,255,.16);
+}
+.tok__art figcaption{
+  margin-top:.9rem; font-family:var(--mono); font-size:.68rem;
+  letter-spacing:.22em; color:var(--muted);
 }
 
 /* ==========================================================================
