@@ -13,13 +13,22 @@ Almost everything you need to change lives in **one place**: the `CONFIG` object
 
 ```js
 const CONFIG = {
-  CA:    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', // Solana contract address
-  X_URL: 'https://x.com/hyperbull__'             // X / Twitter profile link
+  CA:            '4eA1t3QnYDipqLVukfxFy8EpJG8b1bC5J2LHYfrcPanX', // Solana contract address
+  X_URL:         'https://x.com/hyperbull__',           // project X profile
+  LAUNCHPAD_URL: 'https://ansem.io',                    // launchpad it launched on
+  ANSEM_URL:     'https://x.com/blknoiz06'              // launchpad founder's X
 };
 ```
 
-The contract address is injected into every `[data-ca]` element (hero, How-to-Buy, footer) and the
-X link into every `[data-x-link]` element (nav, hero, final CTA, footer). Change it once, it updates everywhere.
+Each value is injected into every element carrying the matching data attribute, so you change it
+once and it updates everywhere:
+
+| Value | Attribute | Where it appears |
+|---|---|---|
+| `CA` | `[data-ca]` | hero, How to Buy, footer |
+| `X_URL` | `[data-x-link]` | nav, hero, final CTA, footer |
+| `LAUNCHPAD_URL` | `[data-launchpad]` | hero badge, The Launch section |
+| `ANSEM_URL` | `[data-ansem]` | The Launch section |
 
 **Tokenomics numbers** (supply / tax / LP / mint authority) are plain HTML — edit them in the
 `#tokenomics` section of [`index.html`](index.html).

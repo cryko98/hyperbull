@@ -5,9 +5,12 @@
    ========================================================================== */
 const CONFIG = {
   // Solana contract address
-  CA: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  CA: '4eA1t3QnYDipqLVukfxFy8EpJG8b1bC5J2LHYfrcPanX',
   // X / Twitter profile link
-  X_URL: 'https://x.com/hyperbull__'
+  X_URL: 'https://x.com/hyperbull__',
+  // Launchpad the token launched on, and the launchpad founder's X
+  LAUNCHPAD_URL: 'https://ansem.io',
+  ANSEM_URL: 'https://x.com/blknoiz06'
 };
 /* ========================================================================== */
 
@@ -18,6 +21,8 @@ const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 /* ------------------------------------------------------------------ config */
 $$('[data-ca]').forEach(el => { el.textContent = CONFIG.CA; });
 $$('[data-x-link]').forEach(el => { el.href = CONFIG.X_URL; });
+$$('[data-launchpad]').forEach(el => { el.href = CONFIG.LAUNCHPAD_URL; });
+$$('[data-ansem]').forEach(el => { el.href = CONFIG.ANSEM_URL; });
 
 /* ================================================================= LIGHTNING
    Shared bolt generator: recursive midpoint displacement.
