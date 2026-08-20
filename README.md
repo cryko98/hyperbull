@@ -14,7 +14,7 @@ Almost everything you need to change lives in **one place**: the `CONFIG` object
 ```js
 const CONFIG = {
   CA:    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', // Solana contract address
-  X_URL: 'https://x.com/'                        // X / Twitter profile link
+  X_URL: 'https://x.com/hyperbull__'             // X / Twitter profile link
 };
 ```
 

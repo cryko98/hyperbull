@@ -6,8 +6,8 @@
 const CONFIG = {
   // Solana contract address
   CA: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-  // X / Twitter profile link — paste it here when you have it
-  X_URL: 'https://x.com/'
+  // X / Twitter profile link
+  X_URL: 'https://x.com/hyperbull__'
 };
 /* ========================================================================== */
 
