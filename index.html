@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>HYPERBULL — $HYPERBULL on Solana</title>
+<meta name="description" content="HYPERBULL is Solana's speed with a body on it. Don't ask how high. Ask how fast." />
+<meta name="theme-color" content="#04070a" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="HYPERBULL — $HYPERBULL on Solana" />
+<meta property="og:description" content="The bull market is early. HYPERBULL is already gone. Don't ask how high. Ask how fast." />
+<meta property="og:image" content="assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="HYPERBULL — $HYPERBULL on Solana" />
+<meta name="twitter:description" content="Don't ask how high. Ask how fast." />
+<meta name="twitter:image" content="assets/og-image.jpg" />
+
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="assets/favicon-180.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="is-loading">
+
+<!-- ============ ICON SPRITE ============ -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <!-- solid -->
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="currentColor" d="M13.6 1 3 14.2h6.4L8.1 23 21 9.4h-6.6z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m0 16H8V7h11z"/></symbol>
+
+  <!-- line art (inherit stroke from currentColor) -->
+  <symbol id="i-bolt-line" viewBox="0 0 32 32">
+    <path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" d="M18.5 2 7 18.5h7.2L12 30l13-16.6h-7.3z"/>
+  </symbol>
+  <symbol id="i-bull" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.5 5.5c-.4 5.6 1.6 8.6 6.6 9.6"/>
+      <path d="M28.5 5.5c.4 5.6-1.6 8.6-6.6 9.6"/>
+      <path d="M10.6 15.1h10.8a1.6 1.6 0 0 1 1.6 1.6v3.1a7 7 0 0 1-14 0v-3.1a1.6 1.6 0 0 1 1.6-1.6Z"/>
+      <path d="M12.8 19.4h1.6M17.6 19.4h1.6M14.4 24.2h3.2"/>
+    </g>
+  </symbol>
+  <symbol id="i-speed" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M13 6.5 22.5 16 13 25.5"/>
+      <path d="M21 6.5 30.5 16 21 25.5" opacity=".55"/>
+      <path d="M2 11h7M2 16h5M2 21h7"/>
+    </g>
+  </symbol>
+  <symbol id="i-up" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 27V7M7.5 15.5 16 7l8.5 8.5"/>
+    </g>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m9 9 14 14M23 9 9 23"/></g>
+  </symbol>
+  <symbol id="i-prev" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 5 9 16l11 11"/></g>
+  </symbol>
+  <symbol id="i-next" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 5 11 11-11 11"/></g>
+  </symbol>
+</svg>
+
+<!-- ============ PRELOADER ============ -->
+<div id="preloader" aria-hidden="true">
+  <canvas id="load-bolts"></canvas>
+  <div class="pre-inner">
+    <div class="pre-logo">
+      <img src="assets/logo.jpg" alt="" />
+      <span class="pre-ring"></span>
+      <span class="pre-ring pre-ring--2"></span>
+    </div>
+    <h1 class="pre-word" aria-label="HYPERBULL">
+      <span>H</span><span>Y</span><span>P</span><span>E</span><span>R</span><span>B</span><span>U</span><span>L</span><span>L</span>
+    </h1>
+    <div class="pre-bar"><i id="pre-fill"></i></div>
+    <div class="pre-meta">
+      <span id="pre-status">IGNITING HORNS</span>
+      <span id="pre-pct">0%</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ GLOBAL FX LAYERS ============ -->
+<div class="scroll-progress"><i id="sp-fill"></i></div>
+<div class="flash" id="flash"></div>
+<canvas id="fx-bolts" class="fx"></canvas>
+<canvas id="fx-sparks" class="fx"></canvas>
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+<div class="bg-scan"></div>
+<div class="bg-vignette"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#home">
+    <img src="assets/logo-nav.png" alt="HyperBull logo" />
+    <span>HYPER<b>BULL</b></span>
+  </a>
+
+  <nav class="nav__links" id="navLinks">
+    <a href="#lore">Lore</a>
+    <a href="#speed">Speed</a>
+    <a href="#memes">Memes</a>
+    <a href="#buy">How to Buy</a>
+    <a href="#tokenomics">Tokenomics</a>
+  </nav>
+
+  <div class="nav__actions">
+    <a class="icon-btn" data-x-link target="_blank" rel="noopener" aria-label="X (Twitter)">
+      <svg class="ico" aria-hidden="true"><use href="#i-x"></use></svg>
+    </a>
+    <a class="btn btn--sm btn--primary" href="#buy">BUY <span>$HYPERBULL</span></a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero__grid">
+
+    <div class="hero__copy">
+      <div class="tagline reveal">
+        <span class="dot"></span> LIVE ON SOLANA
+      </div>
+
+      <h1 class="hero__title glitch" data-text="HYPERBULL">
+        <span class="hero__title-main">HYPERBULL</span>
+        <span class="hero__title-sweep" aria-hidden="true">HYPERBULL</span>
+      </h1>
+
+      <p class="hero__sub reveal">
+        Solana has one job: <b>speed</b>.<br />
+        HYPERBULL is that speed <b>with a body on it</b>.
+      </p>
+
+      <div class="hero__ticker reveal">
+        <span class="chip chip--glow">$HYPERBULL</span>
+        <span class="chip">SOLANA</span>
+        <span class="chip">SPEED&nbsp;/&nbsp;CULT&nbsp;/&nbsp;HORNS</span>
+      </div>
+
+      <div class="ca reveal" id="caBox">
+        <span class="ca__label">CA</span>
+        <code class="ca__value" data-ca>—</code>
+        <button class="ca__copy" id="caCopy" aria-label="Copy contract address">
+          <svg class="ico" aria-hidden="true"><use href="#i-copy"></use></svg>
+          <span>COPY</span>
+        </button>
+      </div>
+
+      <div class="hero__cta reveal">
+        <a class="btn btn--primary btn--lg" href="#buy">
+          <svg class="ico" aria-hidden="true"><use href="#i-bolt"></use></svg>
+          BUY NOW
+        </a>
+        <a class="btn btn--ghost btn--lg" data-x-link target="_blank" rel="noopener">
+          <svg class="ico" aria-hidden="true"><use href="#i-x"></use></svg>
+          FOLLOW ON X
+        </a>
+      </div>
+
+      <p class="hero__foot reveal">Don't ask how high. <b>Ask how fast.</b></p>
+    </div>
+
+    <div class="hero__art">
+      <div class="hero__art-glow"></div>
+      <div class="hero__art-ring"></div>
+      <img class="hero__bull float" src="assets/meme-stand.jpg" alt="HyperBull standing in a lightning storm" />
+      <div class="hero__art-bolts">
+        <svg viewBox="0 0 400 500" preserveAspectRatio="none" aria-hidden="true">
+          <path class="bolt-path" pathLength="100" d="M46 -12 L20 96 L54 104 L14 214 L46 222 L6 352" />
+          <path class="bolt-path bolt-path--2" pathLength="100" d="M356 -12 L388 110 L350 118 L394 236 L358 244 L390 372" />
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+  <a class="scroll-hint" href="#lore" aria-label="Scroll down"><i></i><span>SCROLL</span></a>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track" id="marqueeTrack">
+    <span>$HYPERBULL</span><b></b><span>DON'T ASK HOW HIGH</span><b></b><span>ASK HOW FAST</span><b></b><span>SOLANA</span><b></b><span>THE HERD IS RUNNING</span><b></b>
+    <span>$HYPERBULL</span><b></b><span>DON'T ASK HOW HIGH</span><b></b><span>ASK HOW FAST</span><b></b><span>SOLANA</span><b></b><span>THE HERD IS RUNNING</span><b></b>
+  </div>
+</div>
+
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <div class="wrap stats__grid">
+    <div class="stat reveal"><span class="stat__num" data-count="400" data-suffix="ms">0</span><span class="stat__label">Solana block time</span></div>
+    <div class="stat reveal"><span class="stat__num" data-count="0" data-suffix="/0">0</span><span class="stat__label">Buy / sell tax</span></div>
+    <div class="stat reveal"><span class="stat__num" data-count="100" data-suffix="%">0</span><span class="stat__label">Community owned</span></div>
+    <div class="stat reveal"><span class="stat__num" data-count="1" data-suffix="B">0</span><span class="stat__label">Total supply</span></div>
+  </div>
+</section>
+
+<!-- ============ LORE ============ -->
+<section class="section lore" id="lore">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <span class="eyebrow">CHAPTER 01</span>
+      <h2 class="section__title scramble" data-text="THE LORE">THE LORE</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="lore__grid">
+      <div class="lore__text">
+        <p class="reveal lead">Solana has one job: speed. Blocks land in under half a second, fees round to nothing, and the chain doesn't stop to think about it. Everything else is still waiting on confirmations.</p>
+        <p class="reveal"><b>HYPERBULL is that speed with a body on it.</b></p>
+        <p class="reveal">He's been here since the bottom — the dead months, the sideways chop, the chart nobody wanted to open. He didn't tap out and he didn't post about it. He just stood there in the dark with his horns lit, waiting for the floor to stop moving.</p>
+        <p class="reveal">It's moving now. Volume is coming back. Green candles are holding instead of getting sold into. The timeline is waking up. Anyone who's been through a cycle knows what the start of one feels like — and this is it.</p>
+      </div>
+
+      <figure class="lore__figure reveal parallax" data-speed="0.06">
+        <img src="assets/meme-horizon.jpg" alt="HyperBull looking out over a canyon split by lightning" />
+        <figcaption>He waited for the floor to stop moving.</figcaption>
+      </figure>
+    </div>
+
+    <blockquote class="pullquote reveal">
+      <svg class="pullquote__mark" aria-hidden="true"><use href="#i-bolt-line"></use></svg>
+      So he's running. Not chasing the pump — <em>leading it</em>. Out in front of the chart, hooves cracking the ground, the whole herd behind him.
+    </blockquote>
+
+    <div class="lore__grid lore__grid--flip">
+      <figure class="lore__figure reveal parallax" data-speed="0.08">
+        <img src="assets/meme-charge.jpg" alt="HyperBull charging and cracking the ground" />
+        <figcaption>On a chain this fast, being first isn't luck.</figcaption>
+      </figure>
+
+      <div class="lore__text">
+        <p class="reveal">On a chain this fast, being first isn't luck. It's just how he's built.</p>
+        <p class="reveal big">The bull market is early.<br /><span class="hl">HYPERBULL is already gone.</span></p>
+        <p class="reveal quiet">Don't ask how high. Ask how fast.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPEED ============ -->
+<section class="section speed" id="speed">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <span class="eyebrow">CHAPTER 02</span>
+      <h2 class="section__title scramble" data-text="PROOF OF SPEED">PROOF OF SPEED</h2>
+      <div class="rule"></div>
+      <p class="section__sub">Everything else is still waiting on confirmations.</p>
+    </div>
+
+    <div class="race reveal">
+      <div class="race__row is-hyper">
+        <div class="race__name">SOLANA <svg class="ico" aria-hidden="true"><use href="#i-bolt"></use></svg></div>
+        <div class="race__track"><i style="--w:3%"></i></div>
+        <div class="race__val">~0.4s</div>
+      </div>
+      <div class="race__row">
+        <div class="race__name">ETHEREUM</div>
+        <div class="race__track"><i style="--w:38%"></i></div>
+        <div class="race__val">~12s</div>
+      </div>
+      <div class="race__row">
+        <div class="race__name">BITCOIN</div>
+        <div class="race__track"><i style="--w:100%"></i></div>
+        <div class="race__val">~10min</div>
+      </div>
+    </div>
+
+    <div class="cards">
+      <article class="card tilt reveal">
+        <svg class="card__icon" aria-hidden="true"><use href="#i-bolt-line"></use></svg>
+        <h3>SUB-SECOND</h3>
+        <p>Blocks land before you finish blinking. Fees round to nothing. No waiting room, no pending screen.</p>
+      </article>
+      <article class="card tilt reveal">
+        <svg class="card__icon" aria-hidden="true"><use href="#i-bull"></use></svg>
+        <h3>BUILT FROM THE BOTTOM</h3>
+        <p>He didn't tap out in the dead months and he didn't post about it. He just stood there with his horns lit.</p>
+      </article>
+      <article class="card tilt reveal">
+        <svg class="card__icon" aria-hidden="true"><use href="#i-speed"></use></svg>
+        <h3>OUT IN FRONT</h3>
+        <p>Not chasing the pump — leading it. Hooves cracking the ground, the whole herd behind him.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEMES ============ -->
+<section class="section memes" id="memes">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <span class="eyebrow">CHAPTER 03</span>
+      <h2 class="section__title scramble" data-text="THE HERD">THE HERD</h2>
+      <div class="rule"></div>
+      <p class="section__sub">Right click, save, post. That's the whole job.</p>
+    </div>
+
+    <div class="gallery" id="gallery">
+      <figure class="shot reveal" data-src="assets/meme-stand.jpg"><div class="shot__img"><img src="assets/meme-stand.jpg" alt="Still standing" loading="lazy" /></div><figcaption>STILL STANDING</figcaption></figure>
+      <figure class="shot reveal" data-src="assets/meme-charge.jpg"><div class="shot__img"><img src="assets/meme-charge.jpg" alt="Ground cracker" loading="lazy" /></div><figcaption>GROUND CRACKER</figcaption></figure>
+      <figure class="shot reveal" data-src="assets/meme-sprint.jpg"><div class="shot__img"><img src="assets/meme-sprint.jpg" alt="Terminal velocity" loading="lazy" /></div><figcaption>TERMINAL VELOCITY</figcaption></figure>
+      <figure class="shot reveal" data-src="assets/meme-herd.jpg"><div class="shot__img"><img src="assets/meme-herd.jpg" alt="The herd" loading="lazy" /></div><figcaption>THE WHOLE HERD</figcaption></figure>
+      <figure class="shot reveal" data-src="assets/meme-candles.jpg"><div class="shot__img"><img src="assets/meme-candles.jpg" alt="Green candles only" loading="lazy" /></div><figcaption>GREEN CANDLES ONLY</figcaption></figure>
+      <figure class="shot reveal" data-src="assets/meme-horizon.jpg"><div class="shot__img"><img src="assets/meme-horizon.jpg" alt="The floor stopped moving" loading="lazy" /></div><figcaption>THE FLOOR STOPPED MOVING</figcaption></figure>
+      <figure class="shot shot--wide reveal" data-src="assets/banner.jpg"><div class="shot__img"><img src="assets/banner.jpg" alt="HyperBull banner" loading="lazy" /></div><figcaption>THE BANNER</figcaption></figure>
+      <figure class="shot reveal" data-src="assets/logo.jpg"><div class="shot__img"><img src="assets/logo.jpg" alt="HyperBull logo" loading="lazy" /></div><figcaption>THE MARK</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW TO BUY ============ -->
+<section class="section buy" id="buy">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <span class="eyebrow">CHAPTER 04</span>
+      <h2 class="section__title scramble" data-text="HOW TO BUY">HOW TO BUY</h2>
+      <div class="rule"></div>
+      <p class="section__sub">Four steps. It takes less time than one Ethereum block.</p>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="step__n">01</span>
+        <h3>GET A WALLET</h3>
+        <p>Install Phantom or Solflare. Desktop extension or mobile app — both work.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step__n">02</span>
+        <h3>FUND IT WITH SOL</h3>
+        <p>Buy SOL on any exchange and send it to your new wallet address.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step__n">03</span>
+        <h3>SWAP FOR $HYPERBULL</h3>
+        <p>Open Jupiter or Raydium, paste the contract address below, and confirm the swap.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step__n">04</span>
+        <h3>RUN WITH THE HERD</h3>
+        <p>Hold your horns. Post the memes. The bull market is early — he already left.</p>
+      </li>
+    </ol>
+
+    <div class="ca ca--wide reveal">
+      <span class="ca__label">CONTRACT</span>
+      <code class="ca__value" data-ca>—</code>
+      <button class="ca__copy" data-copy-ca aria-label="Copy contract address">
+        <svg class="ico" aria-hidden="true"><use href="#i-copy"></use></svg>
+        <span>COPY</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOKENOMICS ============ -->
+<!-- Edit these four values in the HTML below if your launch config differs. -->
+<section class="section tokenomics" id="tokenomics">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <span class="eyebrow">CHAPTER 05</span>
+      <h2 class="section__title scramble" data-text="TOKENOMICS">TOKENOMICS</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="tok">
+      <div class="tok__box reveal"><span class="tok__k">TOTAL SUPPLY</span><span class="tok__v">1,000,000,000</span></div>
+      <div class="tok__box reveal"><span class="tok__k">TAX</span><span class="tok__v">0 / 0</span></div>
+      <div class="tok__box reveal"><span class="tok__k">LIQUIDITY</span><span class="tok__v">BURNED</span></div>
+      <div class="tok__box reveal"><span class="tok__k">MINT AUTHORITY</span><span class="tok__v">REVOKED</span></div>
+    </div>
+
+    <figure class="tok__art reveal parallax" data-speed="0.05">
+      <img src="assets/meme-candles.jpg" alt="HyperBull leaping across green candles" />
+    </figure>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final">
+  <div class="wrap final__inner reveal">
+    <img class="final__logo" src="assets/logo.jpg" alt="" />
+    <h2 class="final__title">THE BULL MARKET IS EARLY.<br /><span>HYPERBULL IS ALREADY GONE.</span></h2>
+    <div class="hero__cta">
+      <a class="btn btn--primary btn--lg" href="#buy">
+        <svg class="ico" aria-hidden="true"><use href="#i-bolt"></use></svg>
+        BUY $HYPERBULL
+      </a>
+      <a class="btn btn--ghost btn--lg" data-x-link target="_blank" rel="noopener">
+        <svg class="ico" aria-hidden="true"><use href="#i-x"></use></svg>
+        JOIN ON X
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <a class="nav__brand" href="#home">
+      <img src="assets/logo-nav.png" alt="" />
+      <span>HYPER<b>BULL</b></span>
+    </a>
+    <code class="footer__ca" data-ca>—</code>
+    <a class="icon-btn" data-x-link target="_blank" rel="noopener" aria-label="X (Twitter)">
+      <svg class="ico" aria-hidden="true"><use href="#i-x"></use></svg>
+    </a>
+  </div>
+  <p class="footer__legal">
+    $HYPERBULL is a meme coin with no intrinsic value or expectation of financial return. There is no formal team or roadmap.
+    It is entirely community driven and exists for entertainment purposes only. Nothing here is financial advice. DYOR.
+  </p>
+</footer>
+
+<!-- ============ OVERLAYS ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox__close" id="lbClose" aria-label="Close"><svg aria-hidden="true"><use href="#i-close"></use></svg></button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous"><svg aria-hidden="true"><use href="#i-prev"></use></svg></button>
+  <img id="lbImg" src="" alt="" />
+  <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next"><svg aria-hidden="true"><use href="#i-next"></use></svg></button>
+</div>
+
+<div class="toast" id="toast">
+  <svg class="ico" aria-hidden="true"><use href="#i-bolt"></use></svg>
+  <span id="toastMsg">CONTRACT COPIED</span>
+</div>
+
+<a class="to-top" id="toTop" href="#home" aria-label="Back to top">
+  <svg aria-hidden="true"><use href="#i-up"></use></svg>
+</a>
+
+<script src="main.js"></script>
+</body>
+</html>
