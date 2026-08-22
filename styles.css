@@ -243,6 +243,9 @@ main, .nav, .footer{ position:relative; z-index:4; }
   box-shadow:var(--glow-md); transform:translateY(-2px);
 }
 
+/* link target not set yet — visible but not clickable */
+.is-inert{ opacity:.5; pointer-events:none; }
+
 /* inline text link */
 .link{
   color:var(--cyan); text-shadow:var(--glow-sm);

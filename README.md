@@ -13,8 +13,8 @@ Almost everything you need to change lives in **one place**: the `CONFIG` object
 
 ```js
 const CONFIG = {
-  CA:            '4eA1t3QnYDipqLVukfxFy8EpJG8b1bC5J2LHYfrcPanX', // Solana contract address
-  X_URL:         'https://x.com/hyperbull__',           // project X profile
+  CA:            'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', // Solana contract address
+  X_URL:         '',                                   // project X profile (empty = X buttons inert)
   LAUNCHPAD_URL: 'https://ansem.io',                    // launchpad it launched on
   ANSEM_URL:     'https://x.com/blknoiz06'              // launchpad founder's X
 };
