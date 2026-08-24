@@ -7,10 +7,7 @@ const CONFIG = {
   // Solana contract address
   CA: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
   // X / Twitter profile link — leave empty to make the X buttons inert
-  X_URL: '',
-  // Launchpad the token launched on, and the launchpad founder's X
-  LAUNCHPAD_URL: 'https://ansem.io',
-  ANSEM_URL: 'https://x.com/blknoiz06'
+  X_URL: ''
 };
 /* ========================================================================== */
 
@@ -31,8 +28,6 @@ $$('[data-x-link]').forEach(el => {
     el.classList.add('is-inert');
   }
 });
-$$('[data-launchpad]').forEach(el => { el.href = CONFIG.LAUNCHPAD_URL; });
-$$('[data-ansem]').forEach(el => { el.href = CONFIG.ANSEM_URL; });
 
 /* ================================================================= LIGHTNING
    Shared bolt generator: recursive midpoint displacement.

@@ -13,10 +13,8 @@ Almost everything you need to change lives in **one place**: the `CONFIG` object
 
 ```js
 const CONFIG = {
-  CA:            'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', // Solana contract address
-  X_URL:         '',                                   // project X profile (empty = X buttons inert)
-  LAUNCHPAD_URL: 'https://ansem.io',                    // launchpad it launched on
-  ANSEM_URL:     'https://x.com/blknoiz06'              // launchpad founder's X
+  CA:    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', // Solana contract address
+  X_URL: ''                                    // project X profile
 };
 ```
 
@@ -27,8 +25,9 @@ once and it updates everywhere:
 |---|---|---|
 | `CA` | `[data-ca]` | hero, How to Buy, footer |
 | `X_URL` | `[data-x-link]` | nav, hero, final CTA, footer |
-| `LAUNCHPAD_URL` | `[data-launchpad]` | hero badge, The Launch section |
-| `ANSEM_URL` | `[data-ansem]` | The Launch section |
+
+Leaving `X_URL` empty renders the four X buttons dimmed and unclickable instead of linking nowhere.
+Fill it in and they light up again.
 
 **Tokenomics numbers** (supply / tax / LP / mint authority) are plain HTML — edit them in the
 `#tokenomics` section of [`index.html`](index.html).
