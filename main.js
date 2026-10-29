@@ -5,7 +5,7 @@
    ========================================================================== */
 const CONFIG = {
   // Solana contract address
-  CA: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  CA: 'HNkJuZs4WaX199qvy1VkzaDd2t3NhFCmhX26sC6Ypump',
   // X / Twitter profile link — leave empty to make the X buttons inert
   X_URL: ''
 };
