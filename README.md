@@ -13,8 +13,8 @@ Almost everything you need to change lives in **one place**: the `CONFIG` object
 
 ```js
 const CONFIG = {
-  CA:    '',  // Solana contract address
-  X_URL: ''   // project X profile
+  CA:    'BijvYqudUY28jupPYVya4FLkxKM7vkLmRMPYM4vopump', // Solana contract address
+  X_URL: ''                                             // project X profile
 };
 ```
 

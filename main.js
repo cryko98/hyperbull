@@ -5,7 +5,7 @@
    ========================================================================== */
 const CONFIG = {
   // Solana contract address — leave empty to show "COMING SOON" instead
-  CA: '',
+  CA: 'BijvYqudUY28jupPYVya4FLkxKM7vkLmRMPYM4vopump',
   // X / Twitter profile link — leave empty to make the X buttons inert
   X_URL: ''
 };
