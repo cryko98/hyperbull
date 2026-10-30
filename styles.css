@@ -236,6 +236,13 @@ main, .nav, .footer{ position:relative; z-index:4; }
 /* link target not set yet — visible but not clickable */
 .is-inert{ opacity:.5; pointer-events:none; }
 
+/* contract address not announced yet */
+.ca__value.is-pending{
+  color:var(--cyan); letter-spacing:.3em; font-weight:700;
+  text-shadow:var(--glow-sm); animation:caPulse 2.4s ease-in-out infinite;
+}
+@keyframes caPulse{ 0%,100%{ opacity:1; } 50%{ opacity:.45; } }
+
 /* ==========================================================================
    NAV
    ========================================================================== */

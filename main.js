@@ -4,8 +4,8 @@
    EDIT HERE — everything project-specific lives in this one CONFIG object.
    ========================================================================== */
 const CONFIG = {
-  // Solana contract address
-  CA: 'HNkJuZs4WaX199qvy1VkzaDd2t3NhFCmhX26sC6Ypump',
+  // Solana contract address — leave empty to show "COMING SOON" instead
+  CA: '',
   // X / Twitter profile link — leave empty to make the X buttons inert
   X_URL: ''
 };
@@ -16,7 +16,22 @@ const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ------------------------------------------------------------------ config */
-$$('[data-ca]').forEach(el => { el.textContent = CONFIG.CA; });
+const HAS_CA = Boolean(CONFIG.CA);
+
+$$('[data-ca]').forEach(el => {
+  el.textContent = HAS_CA ? CONFIG.CA : 'COMING SOON';
+  el.classList.toggle('is-pending', !HAS_CA);
+});
+
+// Nothing to copy until the address is in — dim the buttons instead of
+// handing people the words "COMING SOON" on their clipboard.
+if (!HAS_CA) {
+  $$('#caCopy, [data-copy-ca]').forEach(b => {
+    b.classList.add('is-inert');
+    b.setAttribute('aria-disabled', 'true');
+    b.disabled = true;
+  });
+}
 $$('[data-x-link]').forEach(el => {
   if (CONFIG.X_URL) {
     el.href = CONFIG.X_URL;
@@ -426,6 +441,7 @@ function showToast(msg) {
 }
 
 async function copyCA() {
+  if (!HAS_CA) return;
   try {
     await navigator.clipboard.writeText(CONFIG.CA);
   } catch {

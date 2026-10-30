@@ -13,8 +13,8 @@ Almost everything you need to change lives in **one place**: the `CONFIG` object
 
 ```js
 const CONFIG = {
-  CA:    'HNkJuZs4WaX199qvy1VkzaDd2t3NhFCmhX26sC6Ypump', // Solana contract address
-  X_URL: ''                                    // project X profile
+  CA:    '',  // Solana contract address
+  X_URL: ''   // project X profile
 };
 ```
 
@@ -26,8 +26,13 @@ once and it updates everywhere:
 | `CA` | `[data-ca]` | hero, How to Buy, footer |
 | `X_URL` | `[data-x-link]` | nav, hero, final CTA, footer |
 
-Leaving `X_URL` empty renders the four X buttons dimmed and unclickable instead of linking nowhere.
-Fill it in and they light up again.
+Both degrade gracefully while you are waiting on the real value:
+
+- Empty `CA` shows a pulsing **COMING SOON** in all three slots and dims the copy buttons, so
+  nobody ends up with the words "COMING SOON" on their clipboard.
+- Empty `X_URL` renders the four X buttons dimmed and unclickable instead of linking nowhere.
+
+Fill either one in and it lights up everywhere, no other edits needed.
 
 **Tokenomics numbers** (supply / tax / LP / mint authority) are plain HTML — edit them in the
 `#tokenomics` section of [`index.html`](index.html).
